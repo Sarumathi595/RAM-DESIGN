@@ -13,7 +13,7 @@ DURATION: 4 WEEKS
 MENTOR : NEELA SANTOSH
 
 discription:
-ram1 is verilog/systemverilog and ram2 is testbench.
+ram1 is verilog/systemverilog and ram2 is testbench.EDA Playground stimulation tool.
 The given Verilog code implements a simple synchronous RAM and its testbench to demonstrate read and write operations. The RAM module, named simple_ram, is designed as a 16 x 8-bit memory, meaning it has 16 memory locations, each capable of storing 8-bit data. It takes a clock signal (clk), a write enable signal (we), a 4-bit address (addr), and an 8-bit input data (data_in). The output data_out provides the data stored at the specified address during a read operation. The memory is declared as reg [7:0] mem [0:15]. The module uses an always @(posedge clk) block to ensure that both read and write operations are synchronized with the rising edge of the clock. If we is set to 1, the data on data_in is written to the memory location specified by addr. When we is 0, the data stored in the selected memory location is output through data_out.
 
 The testbench tb_simple_ram is written to verify the correct functioning of the RAM module. It defines the signals clk, we, addr, and data_in, and instantiates the simple_ram module. A clock signal is generated using always #5 clk = ~clk;, which toggles the clock every 5 nanoseconds, creating a 10 ns clock period. To generate a waveform for debugging and visualization, the testbench includes $dumpfile("dump.vcd") and $dumpvars(0, tb_simple_ram). These commands create a Value Change Dump (VCD) file that can be viewed using EPWave in EDA Playground. The $monitor statement is used to display the values of signals like we, addr, data_in, and data_out at each simulation time step.
